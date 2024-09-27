@@ -1,14 +1,14 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Week1e4 {
-    static int eveorodd(List<Integer> liss, String type){
+    static int eveorodd(List<Integer> liss, String type) {
         var even = 0;
         var odd = 0;
-        for (var i = 0;i <= liss.size(); i++){
-            if (liss.get(i) %2 == 0){
+        for (var i = 0; i < liss.size(); i++) {
+            if (liss.get(i) % 2 == 0) {
                 even++;
-            }
-            else{
+            } else {
                 odd++;
             }
         }
@@ -17,11 +17,12 @@ public class Week1e4 {
         }
         return even;
     }
-    public static void main(String[] args) {
-        List<Integer> liss = new ArrayList<>();
 
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //System.out.println(eveorodd([1], "odd");
+        var input = sc.nextLine();
+        List<Integer> liss = Arrays.stream(input.split(" ")).map(Integer::parseInt).collect(Collectors.toList());
+        var oddoreve = sc.nextLine();
+        System.out.println(eveorodd(liss, oddoreve));
     }
 }
-
